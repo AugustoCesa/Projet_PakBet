@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notificações | Pak Bet</title>
+  <link rel="stylesheet" href="../style/styleTransmissao.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    body, html {
+      height: 100%;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+        background-image: url("/images/fundo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+      overflow: hidden;
+    }
+    .header-notificacao {
+      width: 100vw;
+      height: 15vh;
+      min-height: 56px;
+      background-image: url("/images/fundo-header.png");
+      border-bottom: 2px solid #efb600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+    .header-notificacao .left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header-notificacao .bi-arrow-left {
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+      transition: color 0.2s;
+    }
+    .header-notificacao .bi-arrow-left:hover {
+      color: #efb600;
+    }
+    .header-notificacao-title {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-align: center;
+      flex: 1;
+    }
+    .header-notificacao .bi-bell-slash {
+      font-size: 1.7rem;
+      cursor: pointer;
+      color: #fff;
+      transition: color 0.2s;
+    }
+    .header-notificacao .bi-bell-slash:hover {
+      color: #efb600;
+    }
+    .notificacoes-content {
+      margin-top: 15vh;
+      height: 85vh;
+      overflow-y: auto;
+      
+      display: flex;
+      flex-direction: column;
+    }
+    .notificacoes-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .notificacao-item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #fff3;
+      padding: 0 24px;
+      gap: 18px;
+      position: relative;
+      background: transparent;
+      transition: background 0.2s;
+      min-height: 56px;
+      width: 100%;
+      box-sizing: border-box;
+      flex-wrap: nowrap;
+    }
+    .notificacao-item:hover {
+      background: #efb60022;
+    }
+    .notificacao-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      object-fit: cover;
+      border: 2px solid #efb600;
+      margin-right: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #217821;
+      flex-shrink: 0;
+    }
+    .notificacao-avatar.default {
+      background: #eee;
+    }
+    .notificacao-conteudo {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .notificacao-titulo {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      word-break: break-word;
+    }
+    .notificacao-titulo .badge-ao-vivo,
+    .notificacao-acao {
+      background: #efb600;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: bold;
+      border-radius: 6px;
+      padding: 4px 14px;
+      margin-left: 8px;
+      letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.533);
+      white-space: nowrap;
+    }
+    .notificacao-acao:hover,
+    .notificacao-titulo .badge-ao-vivo:hover {
+      background: #217821;
+      color: #efb600;
+    }
+    .notificacao-tempo {
+      position: absolute;
+      right: 24px;
+      bottom: 10px;
+      color: #fff;
+      font-size: 0.92rem;
+      opacity: 0.7;
+      font-weight: normal;
+      white-space: nowrap;
+    }
+    @media (max-width: 900px) {
+      .header-notificacao {
+        font-size: 1.05rem;
+        padding: 0 8px;
+      }
+      .notificacao-item {
+        padding: 0 8px;
+        gap: 10px;
+        min-height: 40px;
+      }
+      .notificacao-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+      }
+      .notificacao-tempo {
+        right: 10px;
+        bottom: 6px;
+        font-size: 0.85rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .header-notificacao {
+        font-size: 0.95rem;
+        padding: 0 4px;
+      }
+      .notificacao-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 4px;
+        min-height: unset;
+      }
+      .notificacao-avatar {
+        margin-bottom: 4px;
+        margin-right: 0;
+      }
+      .notificacao-conteudo {
+        width: 100%;
+      }
+      .notificacao-tempo {
+        position: static;
+        margin-top: 2px;
+        align-self: flex-end;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header-notificacao">
+    <div class="left">
+      <a href="../index.html" class="text-white text-decoration-none">
+        <i class="bi bi-arrow-left"></i>
+      </a>
+    </div>
+    <span class="header-notificacao-title">NOTIFICAÇÕES</span>
+    <i class="bi bi-bell-slash"></i>
+  </header>
+  <div class="notificacoes-content">
+    <ul class="notificacoes-list">
+      <li class="notificacao-item">
+        <img class="notificacao-avatar" src="../images/3106921.png" alt="Avatar">
+        <div class="notificacao-conteudo">
+          <div class="notificacao-titulo">
+            @cazetu iniciou uma transmissão ao vivo
+            <span class="badge-ao-vivo">ENTRAR</span>
+          </div>
+        </div>
+        <span class="notificacao-tempo">5min</span>
+      </li>
+      <li class="notificacao-item">
+        <img class="notificacao-avatar" src="../images/3106921.png" alt="Avatar">
+        <div class="notificacao-conteudo">
+          <div class="notificacao-titulo">
+            @pakbet iniciou uma transmissão ao vivo
+            <span class="badge-ao-vivo">ENTRAR</span>
+          </div>
+        </div>
+        <span class="notificacao-tempo">5min</span>
+      </li>
+      <li class="notificacao-item">
+        <span class="notificacao-avatar default"><i class="bi bi-cash-coin"></i></span>
+        <div class="notificacao-conteudo">
+          <div class="notificacao-titulo">
+            Transferência de R$100 recebida via Pix
+            <button class="notificacao-acao">ACESSAR CONTA</button>
+          </div>
+        </div>
+        <span class="notificacao-tempo">12min</span>
+      </li>
+      <li class="notificacao-item">
+       <img class="notificacao-avatar" src="../images/3106921.png" alt="Avatar">
+        <div class="notificacao-conteudo">
+          <div class="notificacao-titulo">
+            @cazetu iniciou uma transmissão ao vivo
+            <span class="badge-ao-vivo">ENTRAR</span>
+          </div>
+        </div>
+        <span class="notificacao-tempo">2min</span>
+      </li>
+      <!-- Adicione mais notificações conforme necessário -->
+    </ul>
+  </div>
+</body>
+</html>
