@@ -57,7 +57,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-image: url("/images/fundo-header.png");
+  background-image: url("../images/fundo-header.png");
   height: 15vh
 }
 
@@ -281,7 +281,7 @@ footer, footer-component {
   border: 2px solid #ffffffb7;
   width: 100%;
   max-width: 250px;
-  height: 210px;
+  height: 230px;
   box-sizing: border-box;
   transition: transform 0.18s, box-shadow 0.18s;
   cursor: pointer;

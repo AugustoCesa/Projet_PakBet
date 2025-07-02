@@ -9,7 +9,7 @@ body{
 */
 
 .navbar{
-    background-image: url(../images/fundo-header.png);
+    background-color:var(--amarelo);
     height: 8vh;
     position: fixed;
     left: 0;
