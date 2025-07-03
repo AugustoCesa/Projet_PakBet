@@ -22,10 +22,10 @@ class Header extends HTMLElement {
       </div>
 
       <ul class="nav-list">
-        <li><a href="pages/game.html">Jogos</a></li>
-        <li><a href="pages/ao_vivo.html">Ao-vivo</a></li>
-        <li><a href="pages/user.html">Perfil</a></li>
-        <li><a href="pages/notificacao.html">Notificações</a></li>
+        <li><a href="./pages/game.html">Jogos</a></li>
+        <li><a href="./pages/ao_vivo.html">Ao-vivo</a></li>
+        <li><a href="./pages/user.html">Perfil</a></li>
+        <li><a href="./pages/notificacao.html">Notificações</a></li>
       </ul>
     </nav>
   </header>
