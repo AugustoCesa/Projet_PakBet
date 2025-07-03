@@ -1,7 +1,7 @@
 @import url(colors.css);
 
 body {
-      background-image: url("/images/fundo.png");
+      background-image: url("../images/fundo.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -14,7 +14,7 @@ body {
 */
 
 .navbar{
-    background-image: url("/images/fundo-header.png");
+    background-image: url("../images/fundo-header.png");
     height: 15vh;
     position: fixed;
     left: 0;

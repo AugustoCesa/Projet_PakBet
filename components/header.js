@@ -11,7 +11,7 @@ class Header extends HTMLElement {
 <header>
     <nav>
       <div  class="logo-header">
-      <a href="../index.html"><img src="/images/LOGO.png" alt=""></img></a>
+      <a href="../index.html"><img src="images/LOGO.png" alt=""></img></a>
       <h3>Pak Bet</h3>
        </div>
       <div class="mobile-menu">
@@ -22,10 +22,10 @@ class Header extends HTMLElement {
       </div>
 
       <ul class="nav-list">
-        <li><a href="../pages/game.html">Jogos</a></li>
-        <li><a href="../pages/ao_vivo.html">Ao-vivo</a></li>
-        <li><a href="../pages/user.html">Perfil</a></li>
-        <li><a href="../pages/notificacao.html">Notificações</a></li>
+        <li><a href="pages/game.html">Jogos</a></li>
+        <li><a href="pages/ao_vivo.html">Ao-vivo</a></li>
+        <li><a href="pages/user.html">Perfil</a></li>
+        <li><a href="pages/notificacao.html">Notificações</a></li>
       </ul>
     </nav>
   </header>
