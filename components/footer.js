@@ -11,7 +11,7 @@ class footer extends HTMLElement {
  <footer>
         <div class="footer-container">
           <div class="footer-logo">
-            <a href="/"><img src="/images/LOGO.png" alt=""></img></a>
+            <a href="/"><img src="./images/LOGO.png" alt=""></img></a>
             <h2>Pak Bet</h2>
           </div>
           <div class="footer-social">
